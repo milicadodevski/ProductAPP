@@ -1,0 +1,22 @@
+[
+  {
+
+    "ProizvodID": 100,
+    "Naziv": "Vaga",
+    "Opis": "mala",
+    "Kategorija": "Mali kucni aparati",
+    "Proizvodjac": "Gorenje",
+    "Dobavljac": "Win win",
+    "Cena": 1.500
+
+  },
+  {
+    "ProizvodID": 101,
+    "Naziv": "Usisivac",
+    "Opis": "za sve",
+    "Kategorija": "Mali kucni aparati",
+    "Proizvodjac": "Gorenje",
+    "Dobavljac": "Win win",
+    "Cena": 8.999
+  }
+]

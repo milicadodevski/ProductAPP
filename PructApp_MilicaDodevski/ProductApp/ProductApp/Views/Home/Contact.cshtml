@@ -1,0 +1,150 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Parallo - Contact Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+    <link rel="stylesheet" href="Content/css/all.min.css" />
+    <link rel="stylesheet" href="Content/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="Content/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="Content/slick/slick-theme.css" />
+    <link rel="stylesheet" href="Content/css/templatemo-style.css" />
+    <style>
+        .tm-services-parallax-header {
+            background-image: url('../../Content/img/person-1.png')
+        }
+
+        .fa-pen:before {
+            width: 79px;
+            height: 77px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333436;
+            color: white;
+            border-radius: 50%;
+            margin-right: 25px;
+        }
+    </style>
+</head>
+<!-- Testimonials header -->
+<section class="row" id="tmServices">
+    <div class="col-12">
+        <div class="parallax-window tm-services-parallax-header tm-testimonials-parallax-header"
+             data-parallax="scroll"
+             data-z-index="101">
+
+            <div class="tm-bg-black-transparent text-center tm-services-header tm-testimonials-header">
+                <h2 class="text-uppercase tm-services-page-title tm-testimonials-page-title">Kontakt</h2>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row tm-contact-row">
+    <div class="col-lg-6 tm-contact-col-left">
+        <form action="#" method="POST" id="tmContactForm" class="tm-bg-black-transparent tm-contact-form">
+            <div class="form-group">
+                <input type="text" id="contact_name" name="contact_name" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Ime i prezime" required="">
+            </div>
+            <div class="form-group">
+                <input type="email" id="contact_email" name="contact_email" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Email" required="">
+            </div>
+            <div class="form-group">
+                <textarea rows="6" id="contact_message" name="contact_message" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Poruka" required=""></textarea>
+            </div>
+            <div class="text-right">
+                <button type="submit" class="btn btn-primary tm-btn-submit rounded-0">
+                    POŠALJI
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-6 tm-contact-col-right">
+        <div class="tm-bg-black-transparent tm-contact-text">
+
+
+
+            <h3 class="tm-service-tab-title"><i class='fas fa-address-card' style='font-size:48px;'></i> Informacije</h3>
+            <p class="tm-service-tab-p">
+                <i class='fas fa-at' style='font-size:36px'></i>  milica.dmilica@yahoo.com
+            </p>
+            <p class="mb-0">
+                <i class='fas fa-phone' style='font-size:36px'></i>  +381 61 6905035
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<script>
+
+    $(function () {
+        $('.tabgroup > div').hide();
+        $('.tabgroup > div:first-of-type').show();
+        $('.tabs a').click(function (e) {
+            e.preventDefault();
+            var $this = $(this),
+                tabgroup = '#' + $this.parents('.tabs').data('tabgroup'),
+                others = $this.closest('li').siblings().children('a'),
+                target = $this.attr('href');
+            others.removeClass('active');
+            $this.addClass('active');
+            $(tabgroup).children('div').hide();
+            $(target).show();
+
+            // Scroll to tab content (for mobile)
+            if ($(window).width() < 992) {
+                $('html, body').animate({
+                    scrollTop: $("#first-tab-group").offset().top
+                }, 200);
+            }
+        })
+
+        $('.tm-carousel').slick({
+            dots: true,
+            infinite: false,
+            arrows: false,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 2,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        arrows: false,
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        arrows: false,
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+    });
+</script>

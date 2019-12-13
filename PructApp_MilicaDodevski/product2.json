@@ -1,0 +1,22 @@
+[
+  {
+
+    "ProizvodID": 102,
+    "Naziv": "Masina za pranje sudja",
+    "Opis": "ugradna",
+    "Kategorija": "Mali kucni aparati",
+    "Proizvodjac": "Gorenje",
+    "Dobavljac": "Tehnomanija",
+    "Cena": 45.000
+
+  },
+  {
+    "ProizvodID": 103,
+    "Naziv": "Monitor",
+    "Opis": "15.6", tip ektrana IPS",
+    "Kategorija": "Racunarske komponente",
+    "Proizvodjac": "Toshiba",
+    "Dobavljac": "Comtrade",
+    "Cena": 14.000
+  }
+]

@@ -1,0 +1,104 @@
+﻿@model ProductApp.ProizvodViewModel
+
+@{
+    ViewBag.Title = "DodajNoviProizvod";
+}
+    <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    </head>
+<style>
+    .fa-pen:before {
+            width: 79px;
+            height: 77px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333436;
+            color: white;
+            border-radius: 50%;
+            margin-right: 25px;
+        }
+    h2 {
+        font-weight: 500;
+        color: black;
+        font-size: 20px;
+        padding-left:210px;
+    }
+
+    .form-horizontal {
+        padding-left:200px;
+        color: black;
+        width: 950px;
+    }
+
+    .field-validation-error {
+        color: red;
+    }
+
+    .form-group {
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .btn-primary {
+        padding: 20px;
+        background-color: #009688;
+        border: 0px;
+        margin-right:20px;
+        color: white;
+    }
+
+        .btn-primary:hover {
+            background-color: burlywood;
+            transition: 0.6s;
+            transform: scale(1.2);
+        }
+</style>
+<h2>Dodaj novi Proizvod</h2>
+
+@using (Html.BeginForm("DodajNoviProizvod", "Proizvod", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+<div class="form-horizontal">
+    <hr />
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Naziv)
+        @Html.TextBoxFor(m => m.Naziv, new { @class = "form-control", id = "inputSuccess" })
+        @Html.ValidationMessageFor(m => m.Naziv)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Kategorija)
+        @Html.TextBoxFor(m => m.Kategorija, new { @class = "form-control", id = "inputSuccess" })
+        @Html.ValidationMessageFor(m => m.Kategorija)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Proizvodjac)
+        @Html.TextBoxFor(m => m.Proizvodjac, new { @class = "form-control", id = "inputSuccess" })
+        @Html.ValidationMessageFor(m => m.Proizvodjac)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Dobavljac)
+        @Html.TextBoxFor(m => m.Dobavljac, new { @class = "form-control", id = "inputSuccess" })
+        @Html.ValidationMessageFor(m => m.Dobavljac)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Opis)
+        @Html.TextBoxFor(m => m.Opis, new { @class = "form-control", id = "inputSuccess" })
+        @Html.ValidationMessageFor(m => m.Opis)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Cena)
+        @Html.TextBoxFor(m => m.Cena, new { @class = "form-control", id = "inputSuccess" })
+        @Html.ValidationMessageFor(m => m.Cena)
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn-primary">Sačuvaj</button>
+            @Html.ActionLink("Nazad", "Index", new { id = Model.ProizvodID }, new { @class = "btn-primary" })
+        </div>
+    </div>
+</div>
+}

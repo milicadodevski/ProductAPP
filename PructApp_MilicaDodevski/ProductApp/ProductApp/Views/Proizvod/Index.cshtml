@@ -1,0 +1,117 @@
+﻿@model IEnumerable<ProductApp.Proizvod>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    body {
+        background-image: url(../../Slike/gradients-wallpaper-high-quality-resolution-For-Laptop-Wallpaper.jpg);
+    }
+
+    .table-responsive {
+        width: 1500px;
+        margin: 0 auto;
+        color: black;
+    }
+
+    .dugme {
+        padding-left: 70%;
+    }
+
+    th, td {
+        padding: 8px;
+        height: 100px;
+        width: 150px;
+        text-align: center;
+        border-bottom: 1px solid black;
+    }
+
+    td {
+        font-size: 18px;
+        color: black;
+        font-weight: 300;
+    }
+
+    th {
+        color: black;
+        text-align: center;
+        font-weight: 900;
+    }
+
+    .btn-primary {
+        padding: 20px;
+        background-color: #009688;
+        border: 0px;
+        color: white;
+    }
+
+        .btn-primary:hover {
+            background-color: burlywood;
+            transition: 0.6s;
+            transform: scale(1.2);
+        }
+</style>
+<p></p>
+<br />
+<br />
+<p class="dugme">
+    @Html.ActionLink("Dodaj JSON", "DodajJSON", "Proizvod", new { @class = "btn-primary" })
+    @Html.ActionLink("Dodaj novi proizvod", "DodajNoviProizvod", "Proizvod", new { @class = "btn-primary" })
+</p>
+<p></p>
+<h3 style="padding-left:220px; color: white;"> Svi proizvodi </h3>
+<p> </p>
+
+<table class="table-responsive">
+    <tr class="table">
+
+        <th>Naziv</th>
+        <th>Kategorija</th>
+        <th>Proizvodjac</th>
+        <th>Dobavljac</th>
+        <th>Opis</th>
+        <th>Cena</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kategorija)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proizvodjac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dobavljac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cena)
+            </td>
+            <td>
+                @Html.ActionLink("Izmeni", "Izmeni", new { id = item.ProizvodID }, new { @class = "btn-primary" })
+            </td>
+            <td>
+                @Html.ActionLink("Izbrisi", "Izbrisi", new { id = item.ProizvodID }, new { @class = "btn-primary" })
+            </td>
+            <td>
+                @Html.ActionLink("Detalji", "DetaljiOProizvodu", new { id = item.ProizvodID }, new { @class = "btn-primary" })
+            </td>
+
+
+        </tr>
+    }
+</table>
+<script src="Content/js/jquery.min.js"></script>
+<script src="Content/js/parallax.min.js"></script>
+<script src="Content/js/bootstrap.min.js"></script>
+

@@ -1,0 +1,126 @@
+﻿@model ProductApp.Proizvod
+@{
+    ViewBag.Title = "Izbrisi";
+}
+    <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    </head>
+<style>
+    .fa-pen:before {
+            width: 79px;
+            height: 77px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333436;
+            color: white;
+            border-radius: 50%;
+            margin-right: 25px;
+        }
+    h2 {
+        font-weight: 500;
+        color: black;
+        font-size: 20px;
+        padding-left:200px;
+    }
+
+    .dl-horizontal {
+        padding-left: 200px;
+        color: black;
+        width: 550px;
+    }
+
+    .form-horizontal {
+        padding-left: 580px;
+        color: black;
+        width: 1000px;
+    }
+
+    .field-validation-error {
+        color: red;
+    }
+
+    .form-group {
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+     .btn-primary {
+        padding: 20px;
+        background-color: #009688;
+        border: 0px;
+        margin-right:20px;
+        color: white;
+    }
+
+        .btn-primary:hover {
+            background-color: burlywood;
+            transition: 0.6s;
+            transform: scale(1.2);
+        }
+</style>
+<h2>Da li želite da izbrišete ovaj proizvod?</h2>
+<hr />
+<div class="tabela">
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategorija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategorija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Proizvodjac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proizvodjac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dobavljac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dobavljac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color" id="dugme">
+                <input type="submit" value="Izbriši" class="btn-primary" />
+                @Html.ActionLink("Nazad", "Index", new { id = Model.ProizvodID }, new { @class = "btn-primary" })
+            </div>
+        }
+    </dl>
+
+
+</div>
